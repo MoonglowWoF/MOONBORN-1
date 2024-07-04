@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wings of Fire Riddle</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(45deg, #000428, #004e92);
+            color: #f8f8f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .riddle {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .input-container {
+            margin-top: 20px;
+        }
+        .answer-input, .password-input {
+            padding: 10px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .submit-button {
+            padding: 10px;
+            background: #004e92;
+            border: none;
+            border-radius: 5px;
+            color: #f8f8f2;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        #correct-answer, #incorrect-answer {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Wings of Fire Riddle</div>
+        <div class="riddle">
+            I am a NightWing and an animus,
+            My power and ambition grow limitless,
+            My soul was darkened by my own desire,
+            Who am I, a dragon born from fire?
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-answer" class="answer-input" placeholder="Enter your answer">
+            <button class="submit-button" onclick="checkUserAnswer()">Submit Answer</button>
+        </div>
+        <div class="input-container">
+            <input type="password" id="password" class="password-input" placeholder="Enter password">
+            <button class="submit-button" onclick="checkPassword()">Reveal Answer</button>
+        </div>
+        <div id="correct-answer">Correct! The answer is Darkstalker.</div>
+        <div id="incorrect-answer">Incorrect answer. Please try again.</div>
+    </div>
+
+    <script>
+        const correctAnswer = 'darkstalker';
+
+        function checkUserAnswer() {
+            const userAnswer = document.getElementById('user-answer').value.trim().toLowerCase();
+            document.getElementById('correct-answer').style.display = 'none';
+            document.getElementById('incorrect-answer').style.display = 'none';
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('correct-answer').style.display = 'block';
+            } else {
+                document.getElementById('incorrect-answer').style.display = 'block';
+            }
+        }
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'Rccsd08967') {
+                alert('The correct answer is Darkstalker.');
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
